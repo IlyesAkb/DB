@@ -1,0 +1,38 @@
+задание 1
+
+Создаем хэш. Ключом выступают адреса, а значение - количство подключений с данного адреса.
+HSET ip_count ip 192.168.1.1 count 1
+При подключении просто инкрементим значене.
+HINCRBY ip_count 192.168.1.1 1
+
+-- задание 2
+HSET users UserName email@example.com
+HSET users email@example.com UserName
+
+HGET users UserName - поиск по имени ползователя
+HGET users email@example.com - поиск по email
+
+-- задание 3
+
+
+use shop
+
+db.catalog.insertMany([
+  {id: 1, name:'Процессоры'},
+  {id: 5, name:'Оперативная память'}
+])
+
+db.products.insertMany([
+   {
+      name: 'Товар 1',
+      description: 'Описание',
+      price: 7890.00,
+      catalog_id: 1
+   },
+   {
+      name: 'Товар 2',
+      description: 'Описание',
+      price: 7890.00,
+      catalog_id: 2
+   }
+]);
